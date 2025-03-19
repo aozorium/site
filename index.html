@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aozorium - Research & Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .search-results {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #F0F0F0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            z-index: 50;
+        }
+        .search-input:focus + .search-results {
+            display: block;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A2A6B',
+                        secondary: '#F0F0F0',
+                        accent: '#A8C0D6',
+                        dark: '#2C2C2C',
+                        light: '#D3D3D3',
+                        con:'#B56B1A'
+
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen" style="background-color: #F0F0F0;">
+    <nav class="fixed top-0 left-0 right-0 backdrop-blur-sm z-50 border-b border-[#1A2A6B]/20" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary">Aozorium</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-primary hover:text-primary">Home / ホーム</a>
+                    <a href="#events" class="text-primary hover:text-primary">Events / イベント</a>
+                    <a href="#resources" class="text-primary hover:text-primary">Resources / リソース</a>
+                    <a href="#support" class="text-primary hover:text-primary">Support Us / 支援</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="flex items-center bg-secondary rounded-full px-4 py-2">
+                            <i class="ri-search-line text-primary mr-2"></i>
+                            <input type="text" class="search-input bg-transparent border-none outline-none text-sm w-40" placeholder="Search / 検索">
+                        </div>
+                        <div class="search-results p-2">
+                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer">
+                                <p class="text-sm">Research Paper 1 / 研究論文 1</p>
+                            </div>
+                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer">
+                                <p class="text-sm">Event: AI Workshop / イベント：AI ワークショップ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flex items-center space-x-1 bg-secondary rounded-full px-3 py-1 cursor-pointer">
+                        <span class="text-sm text-primary">EN</span>
+                        <i class="ri-arrow-down-s-line text-primary"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="pt-24 pb-16" style="background: linear-gradient(to bottom right, #F0F0F0, #F0F0F0, rgba(125, 157, 156, 0.05));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl font-bold text-primary mb-6">
+                    Advancing Research Through Collaboration
+                    <span class="block text-2xl mt-2 text-primary">研究を通じて未来を創造する</span>
+                </h1>
+                <p class="text-lg text-con mb-8">
+                    Join us in our mission to foster innovation and knowledge sharing across borders.
+                    <span class="block mt-2 text-con">国境を越えてイノベーションと知識共有を促進する私たちの使命に参加してください。</span>
+                </p>
+                <button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors">
+                    Learn More / 詳細を見る
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="events" class="py-16" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-8">
+                Upcoming Events / 今後のイベント
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="text-con font-semibold mb-2">March 25, 2025</div>
+                    <h3 class="text-xl text-primary font-semibold mb-3">AI Research Symposium / AI研究シンポジウム</h3>
+                    <p class="text-con mb-4">Join leading researchers for a day of AI insights and networking.</p>
+                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Register / 登録
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="text-con font-semibold mb-2">April 2, 2025</div>
+                    <h3 class="text-xl text-primary font-semibold mb-3">Data Science Workshop / データサイエンスワークショップ</h3>
+                    <p class="text-con mb-4">Hands-on workshop exploring latest data analysis techniques.</p>
+                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Register / 登録
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="text-con font-semibold mb-2">April 15, 2025</div>
+                    <h3 class="text-xl text-primary  font-semibold mb-3">Research Methods Seminar / 研究方法セミナー</h3>
+                    <p class="text-con mb-4">Essential research methodologies for modern scientists.</p>
+                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Register / 登録
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="resources" class="py-16 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-8">
+                Educational Resources / 教育リソース
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-article-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl text-primary font-semibold mb-4">Research Papers / 研究論文</h3>
+                    <ul class="space-y-3">
+                        <li class="text-con">Machine Learning Applications in Healthcare / 医療分野における機械学習の応用</li>
+                        <li class="text-con">Sustainable Energy Research / 持続可能エネルギー研究</li>
+                        <li class="text-con">Quantum Computing Advances / 量子コンピューティングの進歩</li>
+                    </ul>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Read More
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-book-open-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl text-primary font-semibold mb-4">Educational Articles / 教育記事</h3>
+                    <ul class="space-y-3">
+                        <li class="text-con">Introduction to Data Analysis / データ分析入門</li>
+                        <li class="text-con">Research Methodology Guide / 研究方法ガイド</li>
+                        <li class="text-con">Scientific Writing Tips / 科学論文の書き方</li>
+                    </ul>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Read More
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-video-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl text-primary font-semibold mb-4">Video Resources / 動画リソース</h3>
+                    <ul class="space-y-3">
+                        <li class="text-con">Research Methods Tutorial / 研究方法チュートリアル</li>
+                        <li class="text-con">Data Analysis Workshop / データ分析ワークショップ</li>
+                        <li class="text-con">Scientific Presentation Skills / 科学プレゼンテーションスキル</li>
+                    </ul>
+                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Read More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="support" class="py-16" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-8">
+                Support Our Mission / ミッションを支援する
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-heart-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Donate / 寄付</h3>
+                    <p class="text-primary mb-4">Support our research initiatives and educational programs.</p>
+                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Donate Now / 今すぐ寄付
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-team-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Volunteer / ボランティア</h3>
+                    <p class="text-primary mb-4">Join our community of dedicated volunteers.</p>
+                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Join Us / 参加する
+                    </button>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-building-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Partner / パートナー</h3>
+                    <p class="text-primary mb-4">Collaborate with us on research projects.</p>
+                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                        Partner With Us / パートナーになる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact / お問い合わせ</h3>
+                    <p class="text-light">contact@aozorium.org</p>
+                    <p class="text-light">+81 3-1234-5678</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links / クイックリンク</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-light hover:text-primary">About Us / 私たちについて</a></li>
+                        <li><a href="#" class="text-light hover:text-primary">Events / イベント</a></li>
+                        <li><a href="#" class="text-light hover:text-primary">Resources / リソース</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us / フォロー</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-primary">
+                            <i class="ri-twitter-x-line text-xl"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-primary">
+                            <i class="ri-linkedin-line text-xl"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-primary">
+                            <i class="ri-facebook-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Newsletter / ニュースレター</h3>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter email / メールアドレス" class="bg-light text-primary px-4 py-2 rounded-l-button focus:outline-none">
+                        <button class="bg-primary px-4 py-2 rounded-r-button hover:bg-primary/90">
+                            Subscribe / 購読
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-light mt-8 pt-8 text-center text-light">
+                <p>&copy; 2025 Aozorium. All rights reserved. / 全著作権所有</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langToggle = document.querySelector('button:has(.ri-arrow-down-s-line)');
+            let isEnglish = true;
+            langToggle.addEventListener('click', function() {
+                isEnglish = !isEnglish;
+                const langText = langToggle.querySelector('span');
+                langText.textContent = isEnglish ? 'EN' : 'JP';
+            });
+        });
+    </script>
+</body>
+</html>
