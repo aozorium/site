@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aozorium.org/sitemap.xml 

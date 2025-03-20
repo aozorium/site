@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aozorium - Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aozorium.org/">
+    <meta property="og:title" content="Aozorium - Research & Education">
+    <meta property="og:description" content="Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aozorium.org/">
+    <meta property="twitter:title" content="Aozorium - Research & Education">
+    <meta property="twitter:description" content="Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
+    
     <title>Aozorium - Research & Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
         .search-results {
@@ -62,10 +77,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary">Aozorium</a>
+                    <a href="#" class="text-2xl font-bold text-primary" aria-label="Aozorium Home">Aozorium</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-primary hover:text-primary">Home / ホーム</a>
+                <div class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
+                    <a href="#" class="text-primary hover:text-primary" aria-current="page">Home / ホーム</a>
                     <a href="#events" class="text-primary hover:text-primary">Events / イベント</a>
                     <a href="#resources" class="text-primary hover:text-primary">Resources / リソース</a>
                     <a href="#support" class="text-primary hover:text-primary">Support Us / 支援</a>
@@ -73,26 +88,44 @@
                 <div class="flex items-center space-x-4">
                     <div class="relative">
                         <div class="flex items-center bg-secondary rounded-full px-4 py-2">
-                            <i class="ri-search-line text-primary mr-2"></i>
-                            <input type="text" class="search-input bg-transparent border-none outline-none text-sm w-40" placeholder="Search / 検索">
+                            <i class="ri-search-line text-primary mr-2" aria-hidden="true"></i>
+                            <input type="text" 
+                                class="search-input bg-transparent border-none outline-none text-sm w-40" 
+                                placeholder="Search / 検索"
+                                aria-label="Search"
+                                role="searchbox">
                         </div>
-                        <div class="search-results p-2">
-                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer">
+                        <div class="search-results p-2" role="listbox" aria-label="Search results">
+                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer" role="option">
                                 <p class="text-sm">Research Paper 1 / 研究論文 1</p>
                             </div>
-                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer">
+                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer" role="option">
                                 <p class="text-sm">Event: AI Workshop / イベント：AI ワークショップ</p>
                             </div>
                         </div>
                     </div>
-                    <!-- <button class="md:hidden flex items-center space-x-1 bg-secondary rounded-full px-3 py-1 cursor-pointer">
-                        <span class="text-sm text-primary">EN</span>
-                        <i class="ri-arrow-down-s-line text-primary"></i>
-                    </button> -->
                 </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md text-primary hover:text-primary/80" aria-label="Toggle menu">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
             </div>
         </div>
     </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-white/95 md:hidden">
+        <div class="p-4">
+            <button id="close-menu-button" class="absolute top-4 right-4 p-2 text-primary hover:text-primary/80" aria-label="Close menu">
+                <i class="ri-close-line text-2xl"></i>
+            </button>
+            <nav class="mt-16 space-y-6" role="navigation" aria-label="Mobile navigation">
+                <a href="#" class="block text-xl text-primary hover:text-primary/80">Home / ホーム</a>
+                <a href="#events" class="block text-xl text-primary hover:text-primary/80">Events / イベント</a>
+                <a href="#resources" class="block text-xl text-primary hover:text-primary/80">Resources / リソース</a>
+                <a href="#support" class="block text-xl text-primary hover:text-primary/80">Support Us / 支援</a>
+            </nav>
+        </div>
+    </div>
     <section class="pt-24 pb-16" style="background: linear-gradient(to bottom right, #F0F0F0, #F0F0F0, rgba(125, 157, 156, 0.05));">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">

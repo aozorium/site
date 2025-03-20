@@ -1,0 +1,54 @@
+/* 基础样式 */
+:root {
+    --primary-color: #1A2A6B;
+    --secondary-color: #F0F0F0;
+    --accent-color: #A8C0D6;
+    --dark-color: #2C2C2C;
+    --light-color: #D3D3D3;
+    --con-color: #B56B1A;
+}
+
+/* 移动端菜单动画 */
+.mobile-menu {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 搜索结果样式 */
+.search-results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.search-input:focus + .search-results {
+    display: block;
+}
+
+/* 响应式图片 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 无障碍焦点样式 */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #2A3A7B;
+        --secondary-color: #1A1A1A;
+        --accent-color: #B8D0E6;
+        --dark-color: #F0F0F0;
+        --light-color: #3C3C3C;
+    }
+} 
