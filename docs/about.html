@@ -27,6 +27,29 @@
     <script src="js/main.js" defer></script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
+        .bio-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .bio-content.expanded {
+            max-height: 500px;
+        }
+        .bio-toggle {
+            cursor: pointer;
+            color: #1A2A6B;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .bio-toggle i {
+            transition: transform 0.3s ease;
+        }
+        .bio-toggle.expanded i {
+            transform: rotate(180deg);
+        }
     </style>
     <script>
         tailwind.config = {
@@ -138,6 +161,16 @@
                     <p class="text-primary mb-2">准教授 / Associate Professor, 九州大学 / Kyushu University</p>
                     <p class="text-primary text-sm">超伝導エレクトロニクス研究</p>
                     <p class="text-primary text-sm">Superconducting Electronics Research</p>
+                    <div class="bio-toggle" onclick="toggleBio('bio1')">
+                        <span>Read Bio / 経歴を見る</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                    <div id="bio1" class="bio-content mt-4 text-sm text-primary">
+                        <p class="mb-2">Dr. Olivia (Chen) Toyama is an Associate Professor at Kyushu University, specializing in superconducting electronics research. Her work focuses on developing novel superconducting devices and circuits for quantum computing applications.</p>
+                        <p class="mb-2">She has published numerous papers in top-tier journals and has been actively involved in international research collaborations. Dr. Toyama is committed to advancing the field of superconducting electronics and fostering the next generation of researchers.</p>
+                        <p class="mb-2">遠山 オリビア（チェン）は九州大学准教授で、超伝導エレクトロニクス研究を専門としています。量子コンピューティング応用のための新しい超伝導デバイスと回路の開発に焦点を当てています。</p>
+                        <p>トップジャーナルに多数の論文を発表し、国際的な研究協力に積極的に関わっています。超伝導エレクトロニクス分野の発展と次世代の研究者育成に取り組んでいます。</p>
+                    </div>
                 </div>
                 <div class="text-center">
                     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4">
@@ -149,6 +182,20 @@
                     <p class="text-primary mb-2">客員教授 / Visiting Professor, 横浜国立大学 / Yokohama National University</p>
                     <p class="text-primary text-sm">量子コンピューティング研究</p>
                     <p class="text-primary text-sm">Quantum Computing Research</p>
+                    <div class="bio-toggle" onclick="toggleBio('bio2')">
+                        <span>Read Bio / 経歴を見る</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                    <div id="bio2" class="bio-content mt-4 text-sm text-primary">
+                        <p class="mb-2">Christopher Ayala (S'07-M'13-SM'20) received the combined B.Eng./M.Sc. degree in 2009, and completed his Ph.D. in 2012 from Stony Brook University, New York, USA in Electrical and Computer Engineering. From 2013 to 2015, he was a Post-Doctoral Fellow at IBM Research – Zurich, Switzerland.</p>
+                        <p class="mb-2">From 2015, he was with the Institute of Advanced Sciences, Yokohama National University, Japan where he was an associate professor. Since 2024, he joined Atlantic Quantum where he is now the Head of Cryoelectronics while holding a Visiting Professor appointment at Yokohama National University.</p>
+                        <p class="mb-2">His research interests include: quantum computing, emerging circuit technologies, superconductor logic, NEMS-MEMS, transformational compute, and electronic design automation.</p>
+                        <p class="mb-2">Dr. Ayala is a member of The Japan Society of Applied Physics (JSAP); Institute of Electronics, Information and Communication Engineers of Japan (IEICE); Institute of Electrical and Electronics Engineers (IEEE); Eta Kappa Nu Electrical and Computer Engineering Honor Society; and Tau Beta Pi Engineering Honor Society.</p>
+                        <p class="mb-2">クリストファー・アヤラ（S'07-M'13-SM'20）は2009年にB.Eng./M.Sc.の学位を取得し、2012年にニューヨーク州立大学ストーニーブルック校で電気・コンピュータ工学の博士号を取得しました。2013年から2015年まで、IBM Research – Zurich（スイス）でポスドク研究員を務めました。</p>
+                        <p class="mb-2">2015年から横浜国立大学先端科学高等研究院の准教授を務め、2024年からはAtlantic Quantumのクライオエレクトロニクス部門長に就任し、同時に横浜国立大学の客員教授を務めています。</p>
+                        <p class="mb-2">研究分野は、量子コンピューティング、新興回路技術、超伝導ロジック、NEMS-MEMS、変革的コンピューティング、電子設計自動化など多岐にわたります。</p>
+                        <p>日本応用物理学会（JSAP）、電子情報通信学会（IEICE）、IEEE、Eta Kappa Nu電気・コンピュータ工学名誉学会、Tau Beta Pi工学名誉学会の会員です。</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -286,5 +333,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleBio(id) {
+            const bioContent = document.getElementById(id);
+            const toggle = bioContent.previousElementSibling;
+            bioContent.classList.toggle('expanded');
+            toggle.classList.toggle('expanded');
+        }
+    </script>
 </body>
 </html> 
