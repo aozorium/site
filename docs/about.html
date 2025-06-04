@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Aozorium - Our mission, vision, and the team behind our research and educational initiatives.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aozorium.org/about">
+    <meta property="og:title" content="About Aozorium - Our Story">
+    <meta property="og:description" content="Learn more about Aozorium - Our mission, vision, and the team behind our research and educational initiatives.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aozorium.org/about">
+    <meta property="twitter:title" content="About Aozorium - Our Story">
+    <meta property="twitter:description" content="Learn more about Aozorium - Our mission, vision, and the team behind our research and educational initiatives.">
+    
+    <title>About Aozorium - Our Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A2A6B',
+                        secondary: '#F0F0F0',
+                        accent: '#A8C0D6',
+                        dark: '#2C2C2C',
+                        light: '#D3D3D3',
+                        con:'#B56B1A'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen" style="background-color: #F0F0F0;">
+    <!-- Navigation (same as index.html) -->
+    <nav class="fixed top-0 left-0 right-0 backdrop-blur-sm z-50 border-b border-[#1A2A6B]/20" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary" aria-label="Aozorium Home">Aozorium</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
+                    <a href="index.html" class="text-primary hover:text-primary">Home / ホーム</a>
+                    <a href="about.html" class="text-primary hover:text-primary" aria-current="page">About Us / 私たちについて</a>
+                    <a href="index.html#events" class="text-primary hover:text-primary">Events / イベント</a>
+                    <a href="index.html#resources" class="text-primary hover:text-primary">Resources / リソース</a>
+                    <a href="index.html#support" class="text-primary hover:text-primary">Support Us / 支援</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="flex items-center bg-secondary rounded-full px-4 py-2">
+                            <i class="ri-search-line text-primary mr-2" aria-hidden="true"></i>
+                            <input type="text" 
+                                class="search-input bg-transparent border-none outline-none text-sm w-40" 
+                                placeholder="Search / 検索"
+                                aria-label="Search"
+                                role="searchbox">
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md text-primary hover:text-primary/80" aria-label="Toggle menu">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-white/95 md:hidden">
+        <div class="p-4">
+            <button id="close-menu-button" class="absolute top-4 right-4 p-2 text-primary hover:text-primary/80" aria-label="Close menu">
+                <i class="ri-close-line text-2xl"></i>
+            </button>
+            <nav class="mt-16 space-y-6" role="navigation" aria-label="Mobile navigation">
+                <a href="index.html" class="block text-xl text-primary hover:text-primary/80">Home / ホーム</a>
+                <a href="about.html" class="block text-xl text-primary hover:text-primary/80">About Us / 私たちについて</a>
+                <a href="index.html#events" class="block text-xl text-primary hover:text-primary/80">Events / イベント</a>
+                <a href="index.html#resources" class="block text-xl text-primary hover:text-primary/80">Resources / リソース</a>
+                <a href="index.html#support" class="block text-xl text-primary hover:text-primary/80">Support Us / 支援</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="pt-24 pb-16" style="background: linear-gradient(to bottom right, #F0F0F0, #F0F0F0, rgba(125, 157, 156, 0.05));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl font-bold text-primary mb-6">
+                    About Aozorium
+                    <span class="block text-2xl mt-2 text-primary">私たちについて</span>
+                </h1>
+                <p class="text-lg text-con mb-8">
+                    Discover our story, mission, and the passionate team behind Aozorium.
+                    <span class="block mt-2 text-con">Aozoriumの物語、使命、そして情熱的なチームについてご紹介します。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="py-16" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">
+                        Our Mission / 私たちの使命
+                    </h2>
+                    <p class="text-lg text-primary mb-4">
+                        At Aozorium, we are dedicated to advancing research and education through international collaboration. Our mission is to foster innovation and knowledge sharing across borders, creating a global community of researchers and learners.
+                    </p>
+                    <p class="text-lg text-primary">
+                        We believe in the power of collaborative research and the importance of making knowledge accessible to all. Through our various initiatives, we aim to bridge the gap between different research communities and create opportunities for meaningful scientific exchange.
+                    </p>
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/mission.jpg" alt="Our Mission" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-16 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">
+                Our Team / 私たちのチーム
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="images/team1.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-con mb-2">Dr. John Smith</h3>
+                    <p class="text-primary">Research Director</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="images/team2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-con mb-2">Dr. Yuki Tanaka</h3>
+                    <p class="text-primary">Education Coordinator</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="images/team3.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-con mb-2">Dr. Maria Garcia</h3>
+                    <p class="text-primary">International Relations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-16" style="background-color: #F0F0F0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">
+                Our Values / 私たちの価値観
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-lightbulb-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl text-con font-semibold mb-4">Innovation / イノベーション</h3>
+                    <p class="text-primary">Pushing boundaries and exploring new frontiers in research and education.</p>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-team-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl text-con font-semibold mb-4">Collaboration / コラボレーション</h3>
+                    <p class="text-primary">Working together across borders to achieve common goals.</p>
+                </div>
+                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
+                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-book-open-line text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl text-con font-semibold mb-4">Knowledge Sharing / 知識共有</h3>
+                    <p class="text-primary">Making research and education accessible to all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact / お問い合わせ</h3>
+                    <p class="text-light">contact@aozorium.org</p>
+                    <p class="text-light">+81 3-1234-5678</p>
+                    <a href="#" class="text-light hover:text-primary">
+                        <i class="ri-twitter-x-line text-xl"></i>
+                    </a>
+                    <a href="#" class="text-light hover:text-primary">
+                        <i class="ri-linkedin-line text-xl"></i>
+                    </a>
+                    <a href="#" class="text-light hover:text-primary">
+                        <i class="ri-facebook-line text-xl"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-light hover:text-accent">About Us</a></li>
+                        <li><a href="index.html#events" class="text-light hover:text-accent">Events</a></li>
+                        <li><a href="index.html#resources" class="text-light hover:text-accent">Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Newsletter / ニュースレター</h3>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter email" class="bg-light text-primary px-2 py-2 rounded-l-button focus:outline-none">
+                        <button class="bg-primary px-2 py-2 rounded-r-button hover:bg-primary/90">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-light mt-8 pt-8 text-center text-light">
+                <p>&copy; 2025 Aozorium. All rights reserved. / 全著作権所有</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
