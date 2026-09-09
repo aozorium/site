@@ -1,325 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aozorium - Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aozorium.org/">
-    <meta property="og:title" content="Aozorium - Research & Education">
-    <meta property="og:description" content="Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aozorium.org/">
-    <meta property="twitter:title" content="Aozorium - Research & Education">
-    <meta property="twitter:description" content="Advancing research through collaboration. Join us in our mission to foster innovation and knowledge sharing across borders.">
-    
-    <title>Aozorium - Research & Education</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js" defer></script>
-    <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
-        .search-results {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #F0F0F0;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            z-index: 50;
-        }
-        .search-input:focus + .search-results {
-            display: block;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1A2A6B',
-                        secondary: '#F0F0F0',
-                        accent: '#A8C0D6',
-                        dark: '#2C2C2C',
-                        light: '#D3D3D3',
-                        con:'#B56B1A'
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aozorium — Research & Education</title>
+  <meta name="description" content="Aozorium is a Japan-based nonprofit advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing technologies.">
+  <link rel="canonical" href="https://aozorium.org/">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <meta name="theme-color" content="#1A2A6B">
 
-                    },
-                    borderRadius: {
-                        'none': '0px',
-                        'sm': '4px',
-                        DEFAULT: '8px',
-                        'md': '12px',
-                        'lg': '16px',
-                        'xl': '20px',
-                        '2xl': '24px',
-                        '3xl': '32px',
-                        'full': '9999px',
-                        'button': '8px'
-                    }
-                }
-            }
-        }
-    </script>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aozorium.org/">
+  <meta property="og:title" content="Aozorium — Research & Education">
+  <meta property="og:description" content="A Japan-based nonprofit advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing.">
+  <meta property="og:site_name" content="Aozorium">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Aozorium — Research & Education">
+  <meta name="twitter:description" content="A Japan-based nonprofit advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Aozorium",
+    "alternateName": "一般社団法人 Aozorium",
+    "url": "https://aozorium.org/",
+    "logo": "https://aozorium.org/images/logo.svg",
+    "email": "contact@aozorium.org",
+    "areaServed": "JP",
+    "description": "A Japan-based nonprofit General Incorporated Association advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing technologies."
+  }
+  </script>
 </head>
-<body class="min-h-screen" style="background-color: #F0F0F0;">
-    <nav class="fixed top-0 left-0 right-0 backdrop-blur-sm z-50 border-b border-[#1A2A6B]/20" style="background-color: #F0F0F0;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary" aria-label="Aozorium Home">Aozorium</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
-                    <a href="#" class="text-primary hover:text-primary" aria-current="page">Home / ホーム</a>
-                    <a href="about.html" class="text-primary hover:text-primary">About Us / 私たちについて</a>
-                    <a href="#events" class="text-primary hover:text-primary">Events / イベント</a>
-                    <a href="#resources" class="text-primary hover:text-primary">Resources / リソース</a>
-                    <a href="#support" class="text-primary hover:text-primary">Support Us / 支援</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <div class="flex items-center bg-secondary rounded-full px-4 py-2">
-                            <i class="ri-search-line text-primary mr-2" aria-hidden="true"></i>
-                            <input type="text" 
-                                class="search-input bg-transparent border-none outline-none text-sm w-40" 
-                                placeholder="Search / 検索"
-                                aria-label="Search"
-                                role="searchbox">
-                        </div>
-                        <div class="search-results p-2" role="listbox" aria-label="Search results">
-                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer" role="option">
-                                <p class="text-sm">Research Paper 1 / 研究論文 1</p>
-                            </div>
-                            <div class="py-2 px-3 hover:bg-accent rounded cursor-pointer" role="option">
-                                <p class="text-sm">Event: AI Workshop / イベント：AI ワークショップ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md text-primary hover:text-primary/80" aria-label="Toggle menu">
-                    <i class="ri-menu-line text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-white/95 md:hidden">
-        <div class="p-4">
-            <button id="close-menu-button" class="absolute top-4 right-4 p-2 text-primary hover:text-primary/80" aria-label="Close menu">
-                <i class="ri-close-line text-2xl"></i>
-            </button>
-            <nav class="mt-16 space-y-6" role="navigation" aria-label="Mobile navigation">
-                <a href="#" class="block text-xl text-primary hover:text-primary/80">Home / ホーム</a>
-                <a href="about.html" class="block text-xl text-primary hover:text-primary/80">About Us / 私たちについて</a>
-                <a href="#events" class="block text-xl text-primary hover:text-primary/80">Events / イベント</a>
-                <a href="#resources" class="block text-xl text-primary hover:text-primary/80">Resources / リソース</a>
-                <a href="#support" class="block text-xl text-primary hover:text-primary/80">Support Us / 支援</a>
-            </nav>
-        </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aozorium home">
+        <img src="images/logo.svg" alt="" width="34" height="34">
+        <span>Aozorium<small>一般社団法人 · Nonprofit</small></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home<span class="ja" lang="ja">ホーム</span></a>
+        <a href="about.html">About<span class="ja" lang="ja">私たちについて</span></a>
+        <a href="#events">Events<span class="ja" lang="ja">イベント</span></a>
+        <a href="#resources">Resources<span class="ja" lang="ja">リソース</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#support">Support us</a>
+        <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-menu"/></svg>
+        </button>
+      </div>
     </div>
-    <section class="pt-24 pb-16" style="background: linear-gradient(to bottom right, #F0F0F0, #F0F0F0, rgba(125, 157, 156, 0.05));">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl font-bold text-primary mb-6">
-                    Advancing Research Through Collaboration
-                    <span class="block text-2xl mt-2 text-primary">研究を通じて未来を創造する</span>
-                </h1>
-                <p class="text-lg text-con mb-8">
-                   Aozorium is a Japan-based nonprofit General Incorporated Association (一般社団法人) dedicated to advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing technologies. As a nonprofit organization, Aozorium operates without any commercial purpose. All resources, events, and activities are conducted for the public good—supporting researchers, students, and the broader community. Our mission is to make advanced science more accessible, nurture young talent, and foster global dialogue across disciplines. Our core initiatives include organizing the QUEST workshop series, providing open educational resources, facilitating international research exchange, and building a community that connects academia, industry, and the public. Through these efforts, we aim to contribute to long-term, sustainable technological development for society. Aozorium remains committed to transparency, educational impact, and the advancement of science as a shared global asset.
-                    <span class="block mt-2 text-con">Aozorium（一般社団法人 Aozorium）は、非営利の一般社団法人として、超伝導・低温・次世代コンピューティング技術に関する研究教育、国際連携、社会発信を推進することを目的に設立されました。営利を目的としない非営利組織として、すべての活動は公共の利益を目的として行われています。先端科学の知識を社会へ開くこと、若手研究者や学生の育成、国際的な対話の促進をミッションとしています。主な活動には、ワークショップシリーズ「QUEST」の開催、教育リソースの公開、研究交流の促進、学術・産業・市民をつなぐコミュニティ形成が含まれます。これらを通して、科学技術の持続的かつ健全な発展に貢献することを目指しています。Aozorium は今後も透明性、教育的価値、そして科学の公共財としての役割を重視しながら活動を続けてまいります。</span>
-                </p>
-                <a href="about.html" class="inline-block bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors">
-                    Learn More / 詳細を見る
-                </a>
-            </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" data-open="false" aria-hidden="true">
+    <div class="top">
+      <a class="brand" href="index.html" aria-label="Aozorium home">
+        <img src="images/logo.svg" alt="" width="34" height="34"><span>Aozorium</span>
+      </a>
+      <button class="menu-btn" id="menu-close" aria-label="Close menu">
+        <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-x"/></svg>
+      </button>
+    </div>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home<span class="ja" lang="ja">ホーム</span></a></li>
+      <li><a href="about.html">About<span class="ja" lang="ja">私たちについて</span></a></li>
+      <li><a href="#events">Events<span class="ja" lang="ja">イベント</span></a></li>
+      <li><a href="#resources">Resources<span class="ja" lang="ja">リソース</span></a></li>
+      <li><a href="#support">Support us<span class="ja" lang="ja">支援</span></a></li>
+    </ul>
+    <a class="btn btn-primary" href="mailto:contact@aozorium.org">
+      <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mail"/></svg>
+      contact@aozorium.org
+    </a>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div>
+          <p class="eyebrow">Research &amp; Education · Japan</p>
+          <h1>
+            Advancing research through collaboration
+            <span class="ja" lang="ja">研究を通じて未来を創造する</span>
+          </h1>
+          <p class="hero-lede">
+            Aozorium is a Japan-based nonprofit dedicated to scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing.
+            <span class="ja" lang="ja">Aozorium は、超伝導・低温・次世代コンピューティング技術に関する研究教育、国際連携、社会発信を推進する非営利の一般社団法人です。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="about.html">
+              About Aozorium
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#events">Upcoming events</a>
+          </div>
+          <div class="hero-topics" aria-label="Focus areas">
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-atom"/></svg>Superconducting</span>
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-snowflake"/></svg>Cryogenic</span>
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-cpu"/></svg>Next-generation computing</span>
+          </div>
         </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <defs>
+              <radialGradient id="orb" cx="35%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#5B86C9"/>
+                <stop offset=".55" stop-color="#1A2A6B"/>
+                <stop offset="1" stop-color="#0F1B4C"/>
+              </radialGradient>
+            </defs>
+            <circle class="ring ring-3" cx="200" cy="200" r="190" stroke-width="1.25"/>
+            <circle class="ring ring-2" cx="200" cy="200" r="150" stroke-width="1.25"/>
+            <circle class="ring" cx="200" cy="200" r="110" stroke-width="1.5"/>
+            <circle class="orb" cx="200" cy="200" r="70"/>
+            <path class="arc" d="M120 250c30-26 130-26 160 0"/>
+            <path class="arc" d="M140 280c22-16 98-16 120 0" opacity=".6"/>
+            <circle class="dot" cx="200" cy="90" r="6"/>
+            <circle class="dot" cx="325" cy="270" r="4.5" opacity=".7"/>
+            <circle class="dot" cx="65" cy="150" r="3.5" opacity=".5"/>
+          </svg>
+          <div class="hero-card">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-calendar"/></svg>
+            <div><strong>QUEST workshop series</strong>Quantum, cryogenic &amp; superconductive computing</div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="events" class="py-16" style="background-color: #F0F0F0;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-8">
-                Upcoming Events / 今後のイベント
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="text-primary font-semibold mb-2">October 20-22, 2025</div>
-                    <h3 class="text-xl text-con font-semibold mb-3">QUEST 2025 </h3>
-                    <p class="text-primary mb-4">2nd International Workshop on Quantum, Cryogenic and Superconductive Computing</p>
-                    <p class="text-con mb-4"><i class="ri-map-pin-range-fill"></i>Yokohama, Japan / 横浜</p>
-                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors" 
-                    onclick="window.open('https://www.quest2025.org/', '_blank')">
-                        Register / 登録
-                    </button>
-                </div>
-                <!-- <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="text-primary font-semibold mb-2">April 2, 2025</div>
-                    <h3 class="text-xl text-con font-semibold mb-3">Data Science Workshop / データサイエンスワークショップ</h3>
-                    <p class="text-primary mb-4">Hands-on workshop exploring latest data analysis techniques.</p>
-                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        Register / 登録
-                    </button>
-                </div>
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="text-primary font-semibold mb-2">April 15, 2025</div>
-                    <h3 class="text-xl text-con  font-semibold mb-3">Research Methods Seminar / 研究方法セミナー</h3>
-                    <p class="text-primary mb-4">Essential research methodologies for modern scientists.</p>
-                    <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        Register / 登録
-                    </button>
-                </div> -->
-            </div>
+
+    <!-- Mission -->
+    <section class="section section-alt" id="mission">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Who we are</p>
+          <h2 class="section-title">A nonprofit for open, international science<span class="ja" lang="ja">科学を社会に開く、非営利の一般社団法人</span></h2>
         </div>
+
+        <div class="mission reveal">
+          <div class="mission-col" lang="en">
+            <p class="col-label">English</p>
+            <p>Aozorium is a Japan-based nonprofit General Incorporated Association (一般社団法人) dedicated to advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing technologies. As a nonprofit organization, Aozorium operates without any commercial purpose. All resources, events, and activities are conducted for the public good, supporting researchers, students, and the broader community.</p>
+            <p>Our mission is to make advanced science more accessible, nurture young talent, and foster global dialogue across disciplines. Our core initiatives include organizing the QUEST workshop series, providing open educational resources, facilitating international research exchange, and building a community that connects academia, industry, and the public.</p>
+            <p>Through these efforts, we aim to contribute to long-term, sustainable technological development for society. Aozorium remains committed to transparency, educational impact, and the advancement of science as a shared global asset.</p>
+          </div>
+          <div class="mission-col" lang="ja">
+            <p class="col-label">日本語</p>
+            <p class="ja">Aozorium（一般社団法人 Aozorium）は、非営利の一般社団法人として、超伝導・低温・次世代コンピューティング技術に関する研究教育、国際連携、社会発信を推進することを目的に設立されました。営利を目的としない非営利組織として、すべての活動は公共の利益を目的として行われています。</p>
+            <p class="ja">先端科学の知識を社会へ開くこと、若手研究者や学生の育成、国際的な対話の促進をミッションとしています。主な活動には、ワークショップシリーズ「QUEST」の開催、教育リソースの公開、研究交流の促進、学術・産業・市民をつなぐコミュニティ形成が含まれます。</p>
+            <p class="ja">これらを通して、科学技術の持続的かつ健全な発展に貢献することを目指しています。Aozorium は今後も透明性、教育的価値、そして科学の公共財としての役割を重視しながら活動を続けてまいります。</p>
+          </div>
+        </div>
+
+        <div class="pillars reveal">
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-presentation"/></svg>
+            <div><strong>QUEST workshops</strong><span lang="ja">ワークショップシリーズ「QUEST」</span></div>
+          </div>
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-book"/></svg>
+            <div><strong>Open educational resources</strong><span lang="ja">教育リソースの公開</span></div>
+          </div>
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-globe"/></svg>
+            <div><strong>International exchange</strong><span lang="ja">国際的な研究交流の促進</span></div>
+          </div>
+          <div class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-users"/></svg>
+            <div><strong>Academia · industry · public</strong><span lang="ja">学術・産業・市民をつなぐコミュニティ</span></div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="resources" class="py-16 bg-secondary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-8">
-                Educational Resources / 教育リソース
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-article-line text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Open Source Projects / 研究論文</h3>
-                    <ul class="space-y-3">
-                        <li class="text-primary">EDA Tools for Cryo-IC Design</li>
-                        <li class="text-primary">Superconducting AI Benchmarking</li>
-                        <li class="text-primary">To be released</li>
-                    </ul>
-                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        Read More
-                    </button>
-                </div>
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-book-open-line text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Educational Articles </h3>
-                    <ul class="space-y-3">
-                        <li class="text-primary">Introduction to Data Analysis</li>
-                        <li class="text-primary">Research Methodology Guide</li>
-                        <li class="text-primary">Scientific Writing Tips</li>
-                    </ul>
-                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        Read More
-                    </button>
-                </div>
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6" style="background-color: #F0F0F0;">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-video-line text-primary text-xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Video Resources / 動画リソース</h3>
-                    <ul class="space-y-3">
-                        <li class="text-primary">Research Methods Tutorial</li>
-                        <li class="text-primary">Data Analysis Workshop</li>
-                        <li class="text-primary">Scientific Presentation Skills</li>
-                    </ul>
-                    <button class="mt-4 bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        Read More
-                    </button>
-                </div>
-            </div>
+
+    <!-- Events -->
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Events</p>
+          <h2 class="section-title">Workshops and gatherings<span class="ja" lang="ja">イベント</span></h2>
+          <p class="section-lede">We organize the QUEST international workshop series and support academic events across the superconducting and cryogenic computing community.</p>
         </div>
+
+        <div class="grid grid-3 reveal">
+          <article class="card event-card featured">
+            <div class="event-head">
+              <div class="event-date">
+                <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-calendar"/></svg>
+                October 20–22, 2025
+              </div>
+              <span class="tag tag-amber">QUEST series</span>
+            </div>
+            <div class="card-body">
+              <h3>QUEST 2025</h3>
+              <p>2nd International Workshop on Quantum, Cryogenic and Superconductive Computing</p>
+              <p class="ja" lang="ja">量子・低温・超伝導コンピューティングに関する第2回国際ワークショップ</p>
+            </div>
+            <div class="event-meta">
+              <span><svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-map-pin"/></svg>Yokohama, Japan <span lang="ja">／ 横浜</span></span>
+            </div>
+            <div class="card-foot">
+              <a class="btn btn-primary" href="https://www.quest2025.org/" target="_blank" rel="noopener">
+                Workshop website
+                <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-external"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="card-icon amber">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mic"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Host an event with us<span class="ja" lang="ja">イベントの共催・支援</span></h3>
+              <p>We plan and support academic conferences, symposia, lectures and workshops. Get in touch to discuss a collaboration.</p>
+            </div>
+            <div class="card-foot">
+              <a class="link-arrow" href="mailto:contact@aozorium.org?subject=Event%20collaboration">
+                Contact us
+                <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-    <section id="support" class="py-16" style="background-color: #F0F0F0;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-8">
-                Support Our Mission / ミッションを支援する
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
-                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-heart-line text-primary text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Donate / 寄付</h3>
-                    <p class="text-primary mb-4">Support our research initiatives and educational programs.</p>
-                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        今すぐ寄付
-                    </button>
-                </div>
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
-                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-team-line text-primary text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Volunteer / ボランティア</h3>
-                    <p class="text-primary mb-4">Join our community of dedicated volunteers.</p>
-                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                         参加する
-                    </button>
-                </div>
-                <div class="rounded-lg border-2 border-[#1A2A6B]/100 p-6 text-center" style="background-color: #F0F0F0;">
-                    <div class="w-16 h-16 mx-auto flex items-center justify-center bg-primary/10 rounded-full mb-4">
-                        <i class="ri-building-line text-primary text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl text-con font-semibold mb-4">Partner / パートナー</h3>
-                    <p class="text-primary mb-4">Collaborate with us on </br> research projects.</p>
-                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
-                        パートナーになる
-                    </button>
-                </div>
-            </div>
+
+    <!-- Resources -->
+    <section class="section section-alt" id="resources">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Resources</p>
+          <h2 class="section-title">Educational resources<span class="ja" lang="ja">教育リソース</span></h2>
+          <p class="section-lede">Open materials for researchers, students, and anyone curious about superconducting and cryogenic computing.</p>
         </div>
+
+        <div class="grid grid-3 reveal">
+          <article class="card">
+            <span class="card-icon">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-code"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Open source projects<span class="ja" lang="ja">オープンソースプロジェクト</span></h3>
+              <ul class="card-list">
+                <li>EDA tools for cryo-IC design</li>
+                <li>Superconducting AI benchmarking</li>
+                <li class="muted">More to be released</li>
+              </ul>
+            </div>
+            <div class="card-foot"><span class="tag tag-muted">Coming soon <span lang="ja">／ 準備中</span></span></div>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-book"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Educational articles<span class="ja" lang="ja">教育記事</span></h3>
+              <ul class="card-list">
+                <li>Introduction to data analysis</li>
+                <li>Research methodology guide</li>
+                <li>Scientific writing tips</li>
+              </ul>
+            </div>
+            <div class="card-foot"><span class="tag tag-muted">Coming soon <span lang="ja">／ 準備中</span></span></div>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-video"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Video resources<span class="ja" lang="ja">動画リソース</span></h3>
+              <ul class="card-list">
+                <li>Research methods tutorial</li>
+                <li>Data analysis workshop</li>
+                <li>Scientific presentation skills</li>
+              </ul>
+            </div>
+            <div class="card-foot"><span class="tag tag-muted">Coming soon <span lang="ja">／ 準備中</span></span></div>
+          </article>
+        </div>
+      </div>
     </section>
-    <footer class="bg-dark text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact / お問い合わせ</h3>
-                    <p class="text-light">contact@aozorium.org</p>
-                    <p class="text-light">+81 3-1234-5678</p>
-                    <a href="#" class="text-light hover:text-primary">
-                        <i class="ri-twitter-x-line text-xl"></i>
-                    </a>
-                    <a href="#" class="text-light hover:text-primary">
-                        <i class="ri-linkedin-line text-xl"></i>
-                    </a>
-                    <a href="#" class="text-light hover:text-primary">
-                        <i class="ri-facebook-line text-xl"></i>
-                    </a>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-light hover:text-accent">About Us</a></li>
-                        <li><a href="#" class="text-light hover:text-accent">Events</a></li>
-                        <li><a href="#" class="text-light hover:text-accent">Resources</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Newsletter / ニュースレター</h3>
-                    <div class="flex">
-                        <input type="email" placeholder="Enter email" class="bg-light text-primary px-2 py-2 rounded-l-button focus:outline-none">
-                        <button class="bg-primary px-2 py-2 rounded-r-button hover:bg-primary/90">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-light mt-8 pt-8 text-center text-light">
-                <p>&copy; 2025 Aozorium. All rights reserved. / 全著作権所有</p>
-            </div>
+
+    <!-- Support -->
+    <section class="section" id="support">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Support</p>
+          <h2 class="section-title">Support our mission<span class="ja" lang="ja">ミッションを支援する</span></h2>
+          <p class="section-lede">Aozorium operates without any commercial purpose. Every contribution goes toward events, educational resources, and the community we serve.</p>
         </div>
-    </footer>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const langToggle = document.querySelector('button:has(.ri-arrow-down-s-line)');
-            let isEnglish = true;
-            langToggle.addEventListener('click', function() {
-                isEnglish = !isEnglish;
-                const langText = langToggle.querySelector('span');
-                langText.textContent = isEnglish ? 'EN' : 'JP';
-            });
-        });
-    </script> -->
+
+        <div class="grid grid-3 reveal">
+          <article class="card center">
+            <span class="card-icon amber">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-heart"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Donate<span class="ja" lang="ja">寄付</span></h3>
+              <p>Support our research initiatives and educational programs.</p>
+            </div>
+            <div class="card-foot">
+              <a class="btn btn-secondary" href="mailto:contact@aozorium.org?subject=Donation%20inquiry">Donate <span lang="ja">／ 今すぐ寄付</span></a>
+            </div>
+          </article>
+
+          <article class="card center">
+            <span class="card-icon amber">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-users"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Volunteer<span class="ja" lang="ja">ボランティア</span></h3>
+              <p>Join our community of dedicated volunteers.</p>
+            </div>
+            <div class="card-foot">
+              <a class="btn btn-secondary" href="mailto:contact@aozorium.org?subject=Volunteering">Join <span lang="ja">／ 参加する</span></a>
+            </div>
+          </article>
+
+          <article class="card center">
+            <span class="card-icon amber">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-building"/></svg>
+            </span>
+            <div class="card-body">
+              <h3>Partner<span class="ja" lang="ja">パートナー</span></h3>
+              <p>Collaborate with us on research projects.</p>
+            </div>
+            <div class="card-foot">
+              <a class="btn btn-secondary" href="mailto:contact@aozorium.org?subject=Partnership">Partner <span lang="ja">／ パートナーになる</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Let's build open science together<span class="ja" lang="ja">科学を共有財産に。ご連絡をお待ちしています</span></h2>
+            <p>Researchers, students, companies, and curious minds are all welcome. Reach us by email and we will get back to you.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:contact@aozorium.org">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mail"/></svg>
+              contact@aozorium.org
+            </a>
+            <a class="btn btn-secondary" href="about.html">Meet the team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html" aria-label="Aozorium home">
+            <img src="images/logo.svg" alt="" width="34" height="34">
+            <span>Aozorium<small>一般社団法人 · Nonprofit General Incorporated Association</small></span>
+          </a>
+          <p>Advancing scientific education, international collaboration, and public outreach in superconducting, cryogenic, and next-generation computing.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About us <span lang="ja">／ 私たちについて</span></a></li>
+            <li><a href="index.html#events">Events <span lang="ja">／ イベント</span></a></li>
+            <li><a href="index.html#resources">Resources <span lang="ja">／ リソース</span></a></li>
+            <li><a href="index.html#support">Support us <span lang="ja">／ 支援</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact <span lang="ja">／ お問い合わせ</span></h4>
+          <a href="mailto:contact@aozorium.org">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mail"/></svg>
+            contact@aozorium.org
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2025</span> Aozorium. All rights reserved. <span lang="ja">／ 全著作権所有</span></span>
+        <span>Japan</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
